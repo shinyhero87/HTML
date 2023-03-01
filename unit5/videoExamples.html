@@ -1,0 +1,79 @@
+<script>
+    var id = "demo";
+    var x = document.getElementById(id);
+    x.style.color = "#cc0000";
+</script>
+
+<script>
+    var tag = "li";
+    var x = document.getElementById(tag); //will get all "li" tags on the page
+    document.write("the number of tag names for ' " + tag + "' are" + x.length);//will print all tags which ='s # of "li" tags on page then at the end print how many tags it holds
+    //useful when wanting to quickly look at a page and print somewhere how many "p" tags or "li" tags there are. 
+</script>
+
+<!--getElementsByClassName()-->
+<style>
+    .odd  { color: #cc0000; }
+    .even { color: #00cc00; }
+</style>
+<body>   
+    <ul>
+    <li class="odd">One</li>
+    <li class="even">Two</li>
+    <li class="odd">Three</li>
+    </ul>
+</body>   
+<script>
+    var cls = "odd";
+    var x = document.getElementsByClassName(cls); //Collect all class names into an object
+    document.write("The number of class names for '" + cls + "' are " + x.length);
+</script>
+
+<!--onmouseover / onmouseout Events-->
+<script>
+
+    function show() {
+        
+      var now = new Date()
+      time = now.getHours()+":"+now.getMinutes()+":"+now. getSeconds();
+    
+      data.peek.value = time; //Show the time in the from
+    
+    }
+    
+    function hide() {
+    
+      data.peek.value = ""; //Hide the time in the from
+    
+    }
+    
+</script>
+    
+<form name="data">
+    <input type="text" name="peek" onmouseover="show()" onmouseout="hide()" />
+</form>  
+
+<!--onkeypress Event*-->
+<script>
+
+    function whatKey(evt) {
+    
+      var keyval;
+    
+      if(window.event) {     //Test for IE being used	
+                      
+        keyval = evt.keyCode;
+        
+      } else if(evt.which) { //Test for Netscape/Firefox/Opera being used	
+                  
+        keyval = evt.which;
+        
+      }
+    
+      alert(String.fromCharCode(keyval)); //Convert key value to character
+    
+    }
+    
+    </script>
+    
+    <input type="text" onkeypress="whatKey(event)" />

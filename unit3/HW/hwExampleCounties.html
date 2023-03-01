@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>S11 U3-array-lookup</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--
+
+S11 Mark Westlund U3-array-lookup.htm (change the title tag above too!)
+
+What objectives are you demonstrating?
+-Use array
+-Use sort
+-Use of array element by subscript
+-getElmentById()
+-Use concatenation wiht +=
+
+-->
+
+<style>
+
+body { margin: 4%; }
+
+input[type=button] { background: #ccffcc; }
+input[type=reset]  { background: #ffcccc; }
+
+</style>
+
+<script>
+
+// Creat the array
+var colors = ["Adams","Asotin","Benton","Chelan","Clallam","Clark","Columbia","Cowlitz","Douglas","Ferry","Franklin","Garfield","Grant","Grays Harbor","Island","Jefferson","King","Kitsap","Kittitas","Klickitat","Lewis","Lincoln","Mason","Okanogan","Pacific","Pend Oreille","Pierce","San Juan","Skagit","Skamania","Snohomish","Spokane","Stevens","Thurston","Wahkiakum","Walla Walla","Whatcom","Whitman","Yakima"];
+colors.sort();
+
+function lookUp() {
+
+	// Get string from form
+	var ltr = document.getElementById("ltr").value;
+
+	// Build output
+	var msg = "<b>Colors:</b><br />";
+	
+	// Walk through the array looking for matches
+	for(var i = 0; i < colors.length; i++) {
+	
+		// Does the color start with ltr?
+		if(colors[i].startsWith(ltr)) {
+			// Build output
+			msg += colors[i] + "<br />";		
+		}
+	
+	}
+
+	// Display the output
+	document.getElementById("x").innerHTML = msg;
+	
+}
+
+function rset() {
+	// Set the output to blank
+	document.getElementById("x").innerHTML = "";
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>LookUp Array Demo</h1>
+
+<!-- Form data is sent to function lookUp on onclick -->
+<form>
+<input id="ltr" type="text" />
+<input type="button" value="Find!" onclick="lookUp()" />
+<input type="reset" onclick="rset()" />
+</form>
+
+<p id="x">X</p>
+
+</body>
+</html>

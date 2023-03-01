@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S20 Pizza_Post.html</title>
+
+<!--
+
+S20 | Blake Lacroix | Pizza_Post.htm
+
+--post form to php and get info back
+--use of form tags
+--use of radio and checkboxes with values that will be used by the php page
+
+
+
+
+-->
+
+<style>
+    body{
+        background-color: #14B884;
+    
+    }
+    h1 {
+        font-family: 'Droid Sans', sans-serif;
+        font-size: 22px;
+        color: #093426;
+      
+    }
+    </style>
+
+</head>
+<body>
+    <!--Information located inside form tag to be sent to the php page using the post method. This can be changed to allow for more toppings or different sizes of pizza,
+    only thing that will have to be changed is corresponding php page.-->
+    <form method="post" action="pizza_post.php">
+        <p>
+        Name: <input type="text" name="name" size="10" />
+        </p>
+        <p>
+        Size:
+        <input type="radio" name="size" value="small" />Small
+        <input type="radio" name="size" value="medium" checked="" />Medium
+        <input type="radio" name="size" value="large" />Large
+        </p>
+        <p>
+        Topping:
+        <input type="checkbox" name="pepp" value="pepp" />Pepperoni 
+        <input type="checkbox" name="mush" value="mush" />Mushrooms 
+        <input type="checkbox" name="gppr" value="gppr" />Green peppers 
+        <input type="checkbox" name="grlic" value="grlic"/>Garlic
+        </p>
+        <p>
+        <input type="submit" value="Order Pizza!" />
+        </p>
+        </form>
+        
+
+
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S20 U04A lifePosition.htm</title>
+
+<!--
+
+S20 Blake Lacroix U04A lifePosition.htm (change the title tag above too!)
+-Used isNaN(x) to see if non a number to verify data
+-Used a loop create output
+-Used logic control behaviour for errors 
+-CSS input[type]
+-Use of concatenation
+-Using forms
+-Nested IF statements
+-Boolean operators
+-Working with form objects
+-->
+
+<style>
+
+body { margin: 4%; 
+       text-align: center;
+       background-color: #066;
+     }
+
+h1 {font-size: 32px;
+    text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #090;
+    padding:16px;
+    font-weight:lighter;
+    -moz-box-shadow: 2px 2px 6px #888;  
+    -webkit-box-shadow: 2px 2px 6px #888;  
+    box-shadow:2px 2px 6px #888;  
+    text-align:center;
+    display:block;
+    margin:16px;
+    background-color: #606;
+   }
+
+h2 {
+    font-size: 30px;
+    text-shadow: -1px -1px #efefef, 1px 1px #474747, -3px 0 4px #000;
+    color: #666;
+    font-weight:lighter;
+    text-align:center;
+}
+
+p {
+    font-size: 32px;
+    text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #090;
+    padding:16px;
+    font-weight:lighter;
+    -moz-box-shadow: 2px 2px 6px #888;  
+    -webkit-box-shadow: 2px 2px 6px #888;  
+    box-shadow:2px 2px 6px #888;  
+    text-align:center;
+    display:block;
+    margin:16px;
+    background-color: #606
+}
+
+</style>
+
+<script>
+function nameAge(){
+
+    //get info from form
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    //Beginning output before variables
+    var msg = ""
+    //check if a number or not
+if(isNaN(age)!= true && age != ""){
+    //if statements for age
+   if(age < 1) {
+    msg = name + '&nbsp' + "is a baby";
+  } 
+  else if(age < 10 ) {
+    msg = name + '&nbsp' + "is a kid";
+  } 
+  else if(age < 13) {
+    msg = name + '&nbsp' + "is a tween";
+  } 
+  else if(age < 20) {
+    msg = name + '&nbsp' + "is a teenager";
+  } 
+  else if(age < 30) {
+    msg = name + '&nbsp' + "is a young adult";
+  } 
+  else if(age < 55) {
+    msg = name + '&nbsp' + "is an adult";
+  } 
+  else {
+    msg = name + '&nbsp' + "is a Senior";	
+  }
+}//print msg to screen
+ document.getElementById("msg").innerHTML = msg;
+}
+
+function rset() {
+	// Set the output to blank
+	document.getElementById("msg").innerHTML = "";
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+<h1>Whats My Age Again?</h1>
+
+<form>
+
+<h2>Enter Your Name</h2>
+<input id="name" type="text" name="name" placeholder="First and Last Name" />
+
+<h2>Whats your age?</h2>
+<input id="age" type="text" name="age" placeholder="Enter Age" />
+  </br>
+  </br>
+<input type="button" value="Submit" onClick="nameAge(this.form)" />
+<input type="reset" onclick="rset()" />
+</br>
+</br>
+</br>
+</br>
+
+<p id="msg"></p>
+
+</form>
+
+</body>
+</html>

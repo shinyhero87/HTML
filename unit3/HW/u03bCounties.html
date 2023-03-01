@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>S20 U03B-countyLookup</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--
+
+S20 Blake Lacroix U03B-countyLookup.htm (change the title tag above too!)
+
+What objectives are you demonstrating?
+-Use array
+-Use sort
+-Use of array element by subscript
+-getElmentById()
+-Use concatenation with +=
+
+-->
+
+<style>
+
+body { margin: 4%; 
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/db/Washington_state_flag.png) ;
+    background-size: auto;
+    }
+
+input[type=button] { background: #ccffcc; }
+input[type=reset]  { background: #ffcccc; }
+
+p{
+   font-size: larger; 
+   font-weight: normal ;
+}
+
+
+</style>
+
+<script>
+
+// Create the array
+var counties = ["Adams","Asotin","Benton","Chelan","Clallam","Clark","Columbia","Cowlitz","Douglas","Ferry","Franklin","Garfield","Grant","Grays Harbor","Island","Jefferson","King","Kitsap","Kittitas","Klickitat","Lewis","Lincoln","Mason","Okanogan","Pacific","Pend Oreille","Pierce","San Juan","Skagit","Skamania","Snohomish","Spokane","Stevens","Thurston","Wahkiakum","Walla Walla","Whatcom","Whitman","Yakima"];
+counties.sort();
+
+function lookUp() {
+
+	// Get string from form
+	var ltr = document.getElementById("ltr").value;
+
+	// Build output
+	var msg = "<b><u>Counties Found:</u></b><br />";
+	
+	// Walk through the array looking for matches
+	for(var i = 0; i < counties.length; i++) {
+	
+		// Does the county start with ltr?
+		if(counties[i].startsWith(ltr)) {
+			// Build output
+			msg += counties[i] + "<br />";		
+		}
+	
+	}
+
+	// Display the output
+	document.getElementById("x").innerHTML = msg;
+	
+}
+
+function rset() {
+	// Set the output to blank
+	document.getElementById("x").innerHTML = "";
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>LookUp Counties</h1>
+
+<!-- Form data is sent to function lookUp on onclick -->
+<form>
+
+<input id="ltr" type="text" placeholder="Caps first letter" />
+<input type="button" value="Find!" onclick="lookUp()" />
+<input type="reset" onclick="rset()" />
+</form>
+
+<p id="x">X</p>
+
+</body>
+
+  
+</html>

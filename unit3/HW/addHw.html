@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>S11 U03-array-add</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--
+
+S11 Mark Westlund U03-array-add.htm (change the title tag above too!)
+
+What objectives are you demonstrating?
+-Use an Array
+-Use .push to add data to an array
+-Used isNaN(x) to see if non a number to verify data
+-Used logic control behaviour for errors 
+-Use .length to reset the array
+-Used a loop create output
+-Used CSS to color buttons
+-Used overflow in CSS to tape
+
+-->
+
+<style>
+
+body { margin: 8%; }
+
+section { float: left; width: 200px; }
+
+.box {	width: 100px; background: #eeeeee; padding: 15px;
+		text-align: right; font-family: "Courier New"; }
+		
+#tape { height: 200px; overflow: scroll; }
+
+/* Color buttons */
+input[type=button] { background: #ccffcc; width: 100px; }
+input[type=reset]  { background: #ffcccc; width: 100px; }
+
+
+</style>
+
+<script>
+
+// Global array
+var values = [];
+var total  = 0;
+
+function addit() {
+
+	// Get value from form
+	var x = document.getElementById("num").value;
+	//window.alert(x);
+
+	// Is x an number?
+	if(isNaN(x)!= true && x != "") {
+	
+		// Add value with Number() typecasting
+		total += Number(x);
+		
+		// add value to array with .push()
+		values.push(x);
+	
+		// Prep output for that
+		var output = "";
+		for(var i = 0; i < values.length; i++) {
+			output += values[i] + "<br />";
+		}
+		document.getElementById("tape").innerHTML = output;
+		document.getElementById("tot").innerHTML  = total;
+		// Reset input box
+		document.getElementById("num").value = "";
+	
+	} else {
+	
+		window.alert("Please enter a number!");
+	
+	}
+}
+
+function rset() {
+
+	//window.alert("Rset");
+	
+	// Reset variables
+	total = 0;
+	values.length = 0;
+
+	// Clear form
+	document.getElementById("tape").innerHTML = "0";
+	document.getElementById("tot").innerHTML  = "0";
+	document.getElementById("num").value = "";
+
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>Add It Up!</h1>
+
+<section>
+<h2>Add It</h2>
+Enter a value
+<input id="num" type="text" size="5" />
+<br />
+<br />
+<input type="button" value="Add number" onclick="addit()" />
+<br />
+<br />
+<input type="reset" value="Reset" onclick="rset()" />
+</section>
+
+<section>
+<h2>Show It</h2>
+<p id="tape" class="box">0</p>
+<p id="tot"  class="box">0</p>
+</section>
+
+</body>
+</html>

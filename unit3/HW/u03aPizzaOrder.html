@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>S20-U03A </title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--
+
+S20 Blake Lacroix U03A PIZZA ORDER 
+
+What objectives are you demonstrating?
+
+-->
+
+<style>
+
+
+</style>
+
+<script>
+    var size = []
+    
+    function addit() {
+    // Get string from form
+    var ltr = document.getElementById("ltr").value;
+    var size = document.getElementById("size").value;
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+    
+    <h1>Pizza Order Form</h1>
+    <!--Figured this id would never change just the values for each-->
+    <fieldset>
+        <legend>Choose Size:</legend>
+        <div class="Size">	
+        <input type="radio" name="size" id="Personal"> Personal $6<br>
+        <input type="radio" name="size" id="Medium"> Medium $8<br>
+        <input type="radio" name="size" id="Large"> Large $10<br>
+        <input type="radio" name="size" id="Extra-Large"> Extra-Large $12<br>
+        </div>
+    </fieldset>
+     <!--choose to use numbers for the id portion of this one, so toppings could change and not confuse the id-->
+    <fieldset>
+        <legend>Choose Toppings - &cent 0.50 Each</legend>
+        <div class="meat">
+          <input type="checkbox" name="top" id="1" /> Red Onions<br />
+          <input type="checkbox" name="top" id="2" /> Bacon<br />
+          <input type="checkbox" name="top" id="3" /> Ham<br />
+          <input type="checkbox" name="top" id="4" /> Pepperoni<br />
+          <input type="checkbox" name="top" id="5" /> Roasted Garlic<br />
+        </div>
+    </fieldset>  
+    
+    <fieldset>
+        <form>
+            <input id="ltr" type="text" placeholder="Insert Name" />
+            <input type="button" value="Submit" onclick="addItUp()" />
+            <input type="reset" onclick="rset()" />
+        </form>
+    </fieldset>
+    <p id="tot"  class="box"></p>
+
+</body>
+</html>

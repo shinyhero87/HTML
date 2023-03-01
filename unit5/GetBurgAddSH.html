@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S20 U05A GetBurgAddSH.html</title>
+<!--
+
+S20 Blake Lacroix U05A-GetBurgAddSH.html(change the title tag above too!)
+
+What objectives are you demonstrating?
+
+-->
+
+<style>
+    .hidden{
+        display :none;
+    }
+
+   
+   
+   p {
+       display: inline;
+   }
+
+</style>
+
+<script>
+    //for first paragraph, wanted to do something simple and practice working with css and js in conjunction
+        function display() {
+      var y = document.getElementById("first");
+        y.classList.toggle('hidden'); 
+        
+    }
+    
+    
+    // For Second Paragraph, will Hide second half of paragraph
+    function hideAll() {
+    
+    var x = document.getElementsByTagName("p");
+    for(var i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+     }
+    }
+    // Show when over
+    function show(id,clr) {
+    
+    document.getElementById(id).style.color = clr;
+    
+    }
+    
+    // Hide when out
+    function hide(id) {
+    
+    document.getElementById(id).style.color = "#ffffff";
+    
+    }
+    
+    
+    </script>
+
+</head>
+
+
+
+<body>
+    <p > Four score and seven years ago our fathers brought </p>
+    <div id="first" class="hidden" >
+        <p >forth upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</p>
+    </div>
+    <button id="button" onclick="display()">Show/Hide</button><!--Played around with the button and trying to tie all things into on function to be able to display then hid all the functions at once couldn't get it to work. I work full time and have been trying to take a day off to be able to talk during office hours but we have been swamped. Will email sooner next time.-->  
+</br>
+</br>
+   <div id="second" >
+        <p >Now we are engaged in a great civil war,</p>
+        <p id="ghost"
+        onmouseover="show(this.id,'#000')";
+        onmouseout="hide(this.id)"; 
+        >
+        testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this. 
+        </p>
+   </div>
+<div style="clear: both;"></div>
+
+</br>
+</br>
+
+<p>But, in a larger sense, we can not dedicate—</p>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+

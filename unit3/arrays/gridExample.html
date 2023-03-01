@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>S11 U03-grid</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--
+
+S11 Mark Westlund S11-U03-grid.htm (change the title tag above too!)
+
+What objectives are you demonstrating?
+-Use of Array
+-Use of loop
+-Set a array element
+-Use of CSS floats/clear
+
+-->
+
+<style>
+
+body { margin: 4%; }
+
+p { 
+	height: 200px; width: 200px; float: left;
+	text-align: center; vertical-align: middle; line-height: 200px; 
+	margin: 0 1em 1em 0; background: #ccffcc; 
+	font-size: 1.5em;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>The BIG Grid!</h1>
+
+<script>
+
+// Create box array
+var max = 22;
+var box = new Array();
+// Set content to each box to a blank, note offset starts at 1
+for (i = 1; i < max; i++) { box[i] = ""; }
+// Set content for each box, note offset starts at 1
+box[2]  = "Smile!";
+box[14] = "Have fun!";
+box[17] = "Beach?";
+
+// Build grid
+for (i = 1; i < max; i++) {
+
+	// Show a box
+	document.write("<p>" + box[i] + "</p>");
+	
+	// Start a new row
+	if(i % 7 == 0 ) { document.write("<div style='clear: both;'></div>"); } 
+
+}
+
+</script>
+
+</body>
+</html>

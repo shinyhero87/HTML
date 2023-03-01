@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S11 U07-JSON-Sales</title>
+<!--
+
+S11 Mark Westlund U07-JSON-Sales.htm / U07-JSON-Sales-Data.js
+
+What objectives are you demonstrating?
+
+-Use JSON array
+-for/in loop
+-Use JSON keys
+-JSON complex objects
+-Validating JSON object (external)
+-Use of concatenation
+-Use of .innerHTML 
+
+-->
+
+</head>
+
+<style>
+
+body { margin: 8%; font-size: 2em; }
+
+a { margin-right: .5em; }
+
+/* Use of inline blocks to align dept output for left and right */
+li   { margin-left: 1em; }
+.txl { display: inline-block; width: 200px; color: #0000cc; }
+.txr { display: inline-block; text-align: right; width: 50px; font-family: monospace; }
+
+</style>
+
+<body>
+
+<h1>JSON Sales Demo</h1>
+
+<p id="weekly">(Error in retrieving data)</p>
+<p id="items">
+Check out our<br />
+Weekly Specials!<br />
+(click on department)
+</p>
+
+</body>
+
+<!-- Get JSON Sales Data, error msg in "weekly" ID -->
+<script src="U07-JSON-Sales-Data.js"></script>
+
+<script>
+
+// Get and show  depts
+var output = "<h3>Weekly Sale!</h3>";
+for(var i in sale.dept) {
+
+	// Walk through the JSON "dept" array to discover what dept to list
+	output += "<a id=\"" +  sale.dept[i] + "\" href='#' onclick=show(this.id)>" + sale.dept[i] + "</a>";
+	
+	document.getElementById("weekly").innerHTML = output;
+	
+}
+
+// Get and show sale items form the JSON dept by ID, like "Meat"
+function show(id) {
+
+	var output = "";
+
+	// Show item on sale
+	for(var i in sale[id]) {
+		output += "<li><span class='txl'>" + sale[id][i].item + "</span> <span class='txr'>";
+		output += sale[id][i].cost + "</span> </li>";
+	}
+	
+	document.getElementById("items").innerHTML = output;
+
+}
+
+</script>
+
+</html>

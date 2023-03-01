@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>s20 U07B wweather</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="weather.js" type="application/json"></script>
+<!--
+
+CID Name Assignment (change the title tag above too!)
+
+-Use JSON array
+-for/in loop
+-Use JSON keys
+-JSON complex objects
+-Validating JSON object (external)
+-Use of concatenation
+-Use of .innerHTML 
+-->
+
+<style>
+
+body { margin: 8%; 
+	   font-size: 2em;
+	   background-color: burlywood; }
+h1, h2, h3 {
+	color: #34676E;
+	border:outset;
+	text-align: center;
+}
+
+a { margin-right: .5em; }
+
+/* Use of inline blocks to align city output for left and right */
+li   { margin-left: 1em; }
+.txl { display: inline-block; width: 200px; color: #0000cc; }
+.txr { display: inline-block; text-align: right; width: 50px; font-family: monospace; }
+
+</style>
+
+<script>
+
+// Get and show  depts for us cities
+var output = "<h3>weather US</h3>";
+for(var i in weatherUs.usCities) {
+
+	// Walk through the JSON "usCities" array to discover what dept to list
+	output += "<a id=\"" +  weatherUs.usCities[i] + "\" href='#' onclick=show(this.id)>" + weatherUs.usCities[i] + "</a>";
+	
+	document.getElementById("unitedStates").innerHTML = output;
+	
+}
+
+// Get and show sale items form the JSON dept by ID, like "seattle"
+function show(id) {
+
+	var output = "";
+
+	// Show item on sale
+	for(var i in weatherUs[id]) {
+		output += "<li><span class='txl'>" + weatherUs[id][i].sky + "</span> <span class='txr'>";
+		output += weatherUs[id][i].temp + "</span> </li>";
+	}
+	
+	document.getElementById("cities").innerHTML = output;
+
+}
+
+// Get and show  depts for WORLD CITIES
+var output = "<h3>weather WORLD</h3>";
+for(var i in weatherWorld.worldCities) {
+
+	// Walk through the JSON "usCities" array to discover what dept to list
+	output += "<a id=\"" +  weatherWorld.worldCities[i] + "\" href='#' onclick=show(this.id)>" + weatherWorld.worldCities[i] + "</a>";
+	
+	document.getElementById("world").innerHTML = output;
+	
+}
+
+// Get and show sale items form the JSON dept by ID, like "tokyo"
+function show(id) {
+
+	var output = "";
+
+	// Show item on sale
+	for(var i in weatherWorld[id]) {
+		output += "<li><span class='txl'>" + weatherWorld[id][i].sky + "</span> <span class='txr'>";
+		output += weatherWorld[id][i].temp + "</span> </li>";
+	}
+	
+	document.getElementById("wCities").innerHTML = output;
+
+}
+
+</script>
+
+</head>
+<body>
+    <h1>Lorem Ipsum</h1>
+
+    <article>
+      <h2>dolor sit amet</h2>
+      <p>consectetur adipiscing elit. Donec sem ipsum, scelerisque nec dui vel, luctus iaculis metus. Aliquam varius volutpat purus et imperdiet. In dapibus a ante quis egestas. Vivamus purus quam, eleifend a ante at, pretium malesuada ligula. Nullam sollicitudin dui nec auctor bibendum. In velit dolor, aliquam posuere tempus nec, facilisis in lectus. Mauris ornare consequat nisi nec ultricies. Praesent in enim interdum, accumsan nunc sed, imperdiet ante. Ut in quam vel ex convallis maximus ac ac lacus. In nec sapien vestibulum, lacinia metus in, blandit augue.</p>
+    </article>
+   
+    
+    <article>
+      <h2>Nulla tempor ultricies felis id volutpat</h2>
+      <p>Pellentesque pulvinar sem a varius bibendum. Morbi bibendum at eros vel blandit. Donec erat orci, viverra eget ornare efficitur, posuere eget urna. Vestibulum consectetur nulla ex, ac efficitur mauris condimentum eu. Mauris at egestas turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque posuere, lectus quis ullamcorper blandit, ligula diam maximus felis, vel porta urna turpis id est. Mauris ac aliquam ligula, sit amet congue massa. In porttitor dolor nec neque vehicula commodo. Nullam a metus urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus tellus augue, nec accumsan metus bibendum at. Etiam nec vulputate felis.</p>
+    </article>
+    
+    <article>
+      <h2>Fusce at pharetra turpis</h2>
+      <p>suscipit volutpat orci. Donec placerat, neque vitae pretium ultrices, lacus ipsum laoreet felis, a consectetur arcu nisl in magna. Duis placerat ante id placerat lacinia. Nam posuere tempus eros ullamcorper posuere. Praesent pellentesque elementum nunc posuere tincidunt. Aenean et tellus tristique, malesuada dolor in, sollicitudin elit. Vivamus vel arcu velit.
+
+        Suspendisse sit amet faucibus lectus, sed elementum felis. Nulla ac enim ac ipsum suscipit semper bibendum non dolor. Sed eu mi a dolor suscipit suscipit et non quam. Nunc sed gravida massa, a tincidunt sapien. Fusce in commodo tortor, et pretium turpis. Curabitur vitae convallis nibh. Pellentesque finibus aliquet consequat.
+        
+        Praesent pharetra est arcu, vel finibus nulla tempus non. Nulla consequat a nulla quis iaculis. Cras efficitur eu sapien et viverra. Aliquam lacinia velit non dui rhoncus pretium. Nam at fermentum sem, at congue nunc. Donec rhoncus lobortis turpis in blandit. Aliquam interdum, tellus et varius sodales, arcu velit vehicula ipsum, in vestibulum enim nulla sed erat. Nunc pellentesque consequat dui, id faucibus lorem molestie non. Morbi lacinia elit consectetur nisl commodo tincidunt. Nullam molestie consectetur ante. Praesent vel felis ligula.</p>
+    </article>
+<aside>
+    <p id="unitedStates">(Error in retrieving data)</p>
+    <p id="cities"></p>
+</aside>
+</br>
+</br>
+</br>
+<aside>
+    <p id="world">(Error in retrieving data)</p>
+    <p id="wCities"></p>
+</aside>
+</body>
+</html>

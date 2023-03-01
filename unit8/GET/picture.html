@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S20 picture.html</title>
+<!--
+
+S20 Blake Lacroix GET PICTURE
+
+--GETTING data to php and back
+---Using if to check if a radio is checked
+----Use of radio button
+-----Use of pictures as radio buttons
+
+-->
+
+<style>
+.input_hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.selected {
+    background-color: #ccc;
+}
+
+#emotion label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#emotion label img {
+    padding: 4px;
+}
+body{
+    background-color: #14B884;
+
+}
+h1 {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 22px;
+    color: #093426;
+  
+}
+
+
+</style>
+
+<script>
+
+</script>
+
+</head>
+<body>
+    <h1>Emoji Selector</h1>
+ <form action="pictureGet.php" method="get">
+    <div id="emotion">
+        <input type="radio" name="emotion" id="sad" value = "sad"/>
+            <label for="sad"><img src="sad_image.png" width="160" height="130" alt="I'm sad" /></label>
+    
+        <input type="radio" name="emotion" id="happy" value = "happy" />
+            <label for="happy"><img src="happy_image.png" width="160" height="130" alt="I'm happy" /></label>
+
+            <input type="radio" name="emotion" id="bored" value="bored" />
+            <label for="bored"><img src="bored_image.png" width="160" height="130" alt="I'm Bored" /></label>
+           
+            <input type="radio" name="emotion" id="da_bomb" value="da_bomb" />
+            <label for="da_bomb"><img src="da_bomb.png" width="160" height="130" alt="da_bomb"/></label>
+            
+            <input type="radio" name="emotion" id="nervous_laugh" value="nervous_laugh" />
+            <label for="bored"><img src="nervous_laugh.png" width="160" height="130" alt="nervous_laugh" /></label>
+           
+            <p>
+                <input type="submit" value="submit" />
+                </p>
+    </div>
+</form>
+
+</body>
+</html>

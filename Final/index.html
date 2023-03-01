@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CID Assignment</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!--
+
+CID Name Assignment (change the title tag above too!)
+
+What objectives are you demonstrating?
+
+-->
+
+<style>
+  body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+}
+#contentContainer{
+    width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px black;
+}
+#titleBar {
+    width: 1080px;
+    height: 80px;
+    background-color: #c75451;
+} 
+#nameBrand {
+    text-align: center;
+}
+h1{
+    color: #ffffff;
+}
+h2 {
+    text-align: center;
+    line-height: 10px;
+}
+h3{
+
+}
+#flexBox {
+    display: flex;
+    margin: 1px;  
+    background-color: #ffffff;
+    width: 1078px;
+}
+.navButton {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    background-color: #c75451;
+    margin: 1px;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+a:visited{
+    color:rgb(0, 0, 0);
+}
+a:focus {
+    color:rgb(226, 220, 220); 
+}
+#button1 {
+    margin-left: 177px;
+}
+#mainBody {
+    background-color: #c75451;
+    width: 1080px;
+    height: 800px;
+}
+iframe {
+    margin-left: 10px;
+    margin-top: -10px;
+    width: 1060px;
+    height: 780px;
+    border: none;
+}
+footer {
+    width: 1080px;
+    height: 20px;
+    background-color: #c75451;
+}
+#footer {
+    color:white;
+    text-align: center;
+    margin: 0;
+}
+</style>
+
+<script>
+</script>
+
+</head>
+<body>
+
+<div id="contentContainer">
+  <div id="titleBar">
+    <h1 id="nameBrand">OC Restaurant</h1>
+  </div>
+  <nav id="flexBox">
+    <a href="main.html" target="iframe_a"><div class="navButton" id="button1"><h2>HOME</h2></div></a>
+    <a href="menu.html" target="iframe_a"><div class="navButton" id="button2"><h2>MENU</h2></div></a>
+    <a href="locations.html" target="iframe_a"><div class="navButton" id="button3"><h2>LOCATIONS</h2></div></a>
+    <a href="contact.html" target="iframe_a"><div class="navButton" id="button4"><h2>CONTACT</h2></div></a>
+  </nav>
+  <div id="mainBody">
+    <br />
+    <iframe name="iframe_a" src="main.html" title="iframe window"></iframe>
+  </div>  
+  <footer>
+    <h3 id="footer">Copyright CIS-255 Joseph Racke 2021 Olympic College</h3>
+  </footer>
+</div>
+
+</body>
+</html>

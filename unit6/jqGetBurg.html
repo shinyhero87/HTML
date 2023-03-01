@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>S20 U06A jQgetburg.htm</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--
+
+S20 Blake Lacroix U06A jQgetburg.htm (change the title tag above too!)
+
+--Ready Function to wait until page it loaded
+--Function using "id's" to show and hide (jQuery)
+--Function using "class"
+--
+
+
+-->
+
+<style>
+h1 {
+    text-align: center;
+    margin: 1em auto;
+    display: block;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    width:auto;
+}
+h3{
+    text-align: center;
+    margin: 1em auto;
+    display: block;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    width: auto;
+}
+p {
+    text-align: center;
+    margin: 1em auto;
+    display: block;
+}
+body{
+   background-color:bisque; 
+}
+
+
+</style>
+
+<script >
+$(document).ready(function(){
+	
+    $("#firsth").click(function(){
+      $("span:first").hide();
+    });
+    
+    $("#firsts").click(function(){
+      $("span:first").show();
+    });
+   
+    
+    $(".hide").click(function(){
+      $(".second").hide();
+    });
+    
+    $(".show").click(function(){
+      $(".second").show();
+    });
+
+    $("#hide").click(function(){
+      $("#third").hide();
+    });
+    
+    $("#show").click(function(){
+      $("#third").show();
+    });
+
+    $("#hideL").click(function(){
+      $("#third,span:first,.second").hide();
+    });
+    
+    $("#showL").click(function(){
+      $("#third,span:first,.second").show();
+    });
+  
+  });
+  
+  
+</script>
+<body> 
+    <h1>The Gettysburg Address</h1>
+        <p>Four score and <span>seven years ago our fathers brought forth upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</span> </p>
+    <h3>This button will use show and hide the first span</h3>
+        <p>
+            <a id="firsth" href="#">Hide</a>
+            <a id="firsts" href="#">Show</a>
+        </p>
+    <p>Now we are engaged <span class="second">in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.</span></p>
+    <h3>These buttons Hide and Show by "class"</h3>
+        <p>
+            <a class="hide" href="#">Hide</a>
+            <a class="show" href="#">Show</a>
+        </p>
+    
+        <p>But, in a larger sense, <span id="third">we can not dedicate—we can not consecrate—we can not hallow—this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.</span></p>
+    <h3>These buttons Hide and show by "id"</h3>
+        <p>
+            <a id="hide" href="#">Hide</a>
+            <a id="show" href="#">Show</a>
+        </p>
+    <h3>These buttons Hide and show everything</h3>
+        <p>
+            <a id="hideL" href="#">Hide</a>
+            <a id="showL" href="#">Show</a>
+        </p>
+  
+
+
+
+
+
+
+
+</body>
+</html>

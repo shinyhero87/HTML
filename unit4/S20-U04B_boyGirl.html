@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S20 U04B boyGirl.htm</title>
+
+<!--
+
+S20 Blake Lacroix U04B boyGirl.htm (change the title tag above too!)
+-Used isNaN(x) to see if non a number to verify data
+-Used a loop create output
+-Used logic control behaviour for errors 
+-CSS input[type]
+-Use of concatenation
+-Using forms
+-Nested IF statements
+-Boolean operators
+-Working with form objects
+-->
+
+<style>
+
+body { margin: 4%; 
+       text-align: center;
+       background-color: #066;
+     }
+
+h1 {font-size: 32px;
+    text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #090;
+    padding:16px;
+    font-weight:lighter;
+    -moz-box-shadow: 2px 2px 6px #888;  
+    -webkit-box-shadow: 2px 2px 6px #888;  
+    box-shadow:2px 2px 6px #888;  
+    text-align:center;
+    display:block;
+    margin:16px;
+    background-color: #361999;
+   }
+
+h2 {
+    font-size: 30px;
+    color: #78FFF1;
+    font-weight:lighter;
+    text-align:center;
+}
+
+p {
+    font-size: 32px;
+    text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #090;
+    padding:16px;
+    font-weight:lighter;
+    -moz-box-shadow: 2px 2px 6px #888;  
+    -webkit-box-shadow: 2px 2px 6px #888;  
+    box-shadow:2px 2px 6px #888;  
+    text-align:center;
+    display:block;
+    margin:16px;
+    background-color: #361999;
+}
+</style>
+
+<script>
+//start of function
+function nameAgeGender(){
+
+    //get info from form
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    var gender = document.getElementById("gender").value;
+    //Beginning output before variables
+    var msg = ""
+    //check if a number or not
+if(isNaN(age)!= true && age != ""){
+    //if statements for age and gender
+   if(age < 18 && gender == "male" ) {
+    msg = name + '&nbsp' + "is a boy";
+  } 
+  else if(age > 18 && gender == "male") {
+    msg = name + '&nbsp' + "is a Man";
+  } 
+  else if(age < 18 && gender == "female" ) {
+    msg = name + '&nbsp' + "is a girl";
+  } 
+  else {
+    msg = name + '&nbsp' + "is a Woman";
+  } 
+ 
+}//print msg to screen
+ document.getElementById("msg").innerHTML = msg;
+}
+
+function rset() {
+	// Set the output to blank
+	document.getElementById("msg").innerHTML = "";
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+<h1>Whats My Age Again?</h1>
+
+<form>
+
+<h2>Enter Your Name</h2>
+<input id="name" type="text" name="name" placeholder="First and Last Name" />
+
+<h2>Whats your age?</h2>
+<input id="age" type="text" name="age" placeholder="Enter Age" />
+
+<h2>Whats your gender?</h2>
+<select name="gender" id="gender">
+  <option value="male">male</option>
+  <option value="female">female</option>
+</select>
+  </br>
+  </br>
+<input type="button" value="Submit" onClick="nameAgeGender(this.form)" />
+<input type="reset" onclick="rset()" />
+</br>
+</br>
+</br>
+</br>
+
+<p id="msg"></p>
+
+</form>
+
+</body>
+</html>

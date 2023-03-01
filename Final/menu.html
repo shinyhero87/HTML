@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<title>S20 Group project menu</title>
+<!--
+
+S20 Blake Lacroix U09 (change the title tag above too!)
+
+What objectives are you demonstrating?
+
+-->
+
+<style>
+
+h1{
+        color: #34676E;
+        border:outset;
+        text-align: center;
+        background-color:#ffffff;
+    }
+    
+    b{
+        color: #34676E;
+    }
+    a{
+        margin:2%;
+    }
+    span{
+        color:#6d3a34;
+    }
+    body{
+        background-color: bisque;
+        
+    }
+    footer{
+        margin: 30px;
+        color: #34676E;
+        text-align: center;
+        border:outset;
+        background-color: #ffffff;
+        
+    }
+    ul{
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.8;
+    }
+	input[type=button],
+      input[type=submit] {
+        background-color: #34676E;
+        border: none;
+        color: #fff;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+		padding: 5px 15px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+      }
+      
+
+</style>
+
+<script>
+$(document).ready(function() {
+    //Hides everything except the Relative URLs
+    $("#appsFP,#appsBW,#appsOR,#entreesSB,#entreesSCB,#entreesHC,#dessertsSSS,#dessertsSC,#dessertsWAC,#beverageC,#beverageSD,#beveragesFL,#slideA,#slideE,#slideD,#slideB").hide();
+    //Show ul with slide then fade in the spans 4 seconds after clicked
+    $("#fadeApps,.slideApps").click(function() {
+		$("#appsFP,#appsBW,#appsOR").fadeToggle(4000);
+        $("#slideA").slideToggle("slow");
+	});
+    $("#fadeEntrees,.slideEntrees").click(function() {
+		$("#entreesSB,#entreesSCB,#entreesHC").fadeToggle(4000);
+        $("#slideE").slideToggle("slow");
+	});
+    $("#fadeDesserts,.slideDesserts").click(function() {
+		$("#dessertsSSS,#dessertsSC,#dessertsWAC").fadeToggle(4000);
+        $("#slideD").slideToggle("slow");
+	});
+    $("#fadeBeverages,.slideBeverages").click(function() {
+		$("#beverageC,#beverageSD,#beveragesFL").fadeToggle(4000);
+        $("#slideB").slideToggle("slow");
+	});
+});
+
+</script>
+
+</head>
+<body>
+	<h1>OC Resturant and Eatery</h1>
+	<form method="GET" action="menu_get.php">
+	<a id="fadeApps" class="slideApps"  href="#">Apps</a>
+		<p >
+			<ul id="slideA">
+				<li><input type="checkbox" name="FP" value="FP" /><b>Fried pickles</b> -<span id="appsFP">Golden-Fried dill slices served with our special sauce..........$4.00</span></li>
+			</br>
+				<li><input type="checkbox" name="BBW" value="BBW"><b>Boneless Buffalo Wings</b> -<span id="appsBW">All-white meat boneless wings with your choice of sauce: Buffalo with bleu cheese, BBQ, or teriyaki..........$5.00</span> </li>
+			</br>
+				<li><input type="checkbox" name="OnR" value="OnR"><b>Onion Rings</b> - <span id="appsOR">crispy onion rings served with Spicy Mayo and ranch..........$4.50</span></li>
+			</ul>
+			 
+		</p>
+	<a id="fadeEntrees" class="slideEntrees" href="#">Entrees</a>
+		<p>
+			<ul id="slideE">
+				<li><input type="checkbox" name="SimBur" value="SimBur" ><b>Simple Burger</b> -<span id="entreesSB">Beef or a custom-blended, ancient-grain-and-quinoa veggie patty, pickles, red onions, lettuce and tomatoes........... $6.00</span></li>
+			</br>
+				<li><input type="checkbox" name="SimChk" value="SimChk" ><b>Simple Chicken Burger</b> -<span id="entreesSCB">Juicy chicken breast with pickles, lettuce, tomatoes and red onions on the side.......... $6.50</span> </li>
+			</br>
+				<li><input type="checkbox" name="HalChp" value="HalChp"><b>Halibut & Chips</b> - <span id="entreesHC">Hand-battered, golden-fried halibut fillets with Steak Fries and Dill’d & Pickl’d Tarter Sauce.......... $7.50</span></li>
+			</ul>
+			 
+		</p>
+	<a id="fadeDesserts" class=".slideDesserts"  href="#">Desserts</a>
+		<p>
+			<ul id="slideD">
+				<li><input type="checkbox" name="SoSerSun" value="SoSerSun" ><b>Soft Serve Sundae</b> -<span id="dessertsSSS">Two layers of chocolate syrup, soft serve, whipped cream, rainbow sprinkles and a cherry on top.......... $5.00</span></li>
+			</br>
+				<li><input type="checkbox" name="SliChee" value="SliChee" ><b>Slice of Cheescake</b> -<span id="dessertsSC">Creamy Cheesecake with a Graham Cracker Crust and Sour Cream Topping.......... $4.50</span> </li>
+			</br>
+				<li><input type="checkbox" name="WarAppCri" value="WarAppCri" ><b>Warm Apple Crisp</b> - <span id="dessertsWAC">Delicious Crispy Nutty Topping and Vanilla Ice Cream.......... $3.75</span></li>
+			</ul>
+			 
+		</p>
+	<a id="fadeBeverages" class=".slideBeverages"  href="#">Beverages</a>
+		<p>
+			<ul id="slideB">
+				<li><input type="checkbox" name="Coff" value="Coff"><b>Coffee</b> -<span id="beverageC">Cup of hot rotating blend of coffee.......... $1.00</span></li>
+			</br>
+				<li><input type="checkbox" name="SoDr" value="SoDr"><b>Soft Drinks</b> -<span id="beverageSD">Coke, Diet Coke, Coke Zero, Barq's Root Beer, Sprite, and Dr Pepper. As always, refills are complimentary.......... $1.25</span> </li>
+			</br>
+				<li><input type="checkbox" name="FlaLem" value="FlaLem"><b>Flavored Lemonades</b> - <span id="beveragesFL">Strawberry, Raspberry or Strawberry.......... $2.75</span></li>
+			</ul>
+		</p>
+	
+		<p>
+			Name: <input type="text" name="name" size="15" />
+		</p>
+		<p>
+			Telephone:<input type="tel" name="tel" size="12" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+		</p>
+		<p>	
+			<input type="submit" value="Submit Order" />
+		</p>
+	</form>
+		<footer>
+			<p>
+				<a href="insertEmail@gmail.com">Contact Info Here</a><span>Tel. 253-555-5555</span>
+			</p>
+		</footer>
+
+</body>
+</html>

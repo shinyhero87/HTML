@@ -1,0 +1,77 @@
+<?php
+//create an array to store values in
+$cost = array();
+
+
+
+//check to see if  variable is set or not and assign values to them
+if(isset($_GET["name"])) { $name = $_GET["name"]; } else { $name = ""; }
+if(isset($_GET["tel"])) { $tel = $_GET["tel"]; } else { $tel = ""; }
+if(isset($_GET["FP"])) { $FP = $_GET["FP"]; } else { $FP = ""; }
+if(isset($_GET["BBW"])) { $BBW = $_GET["BBW"]; } else { $BBW = ""; }
+if(isset($_GET["OnR"])) { $OnR= $_GET["OnR"]; } else { $OnR = ""; }
+if(isset($_GET["SimBur"])) { $SimBur = $_GET["SimBur"]; } else { $SimBur = ""; }
+if(isset($_GET["SimChk"])) { $SimChk= $_GET["SimChk"]; } else { $SimChk = ""; }
+if(isset($_GET["HalChp"])) { $HalChp = $_GET["HalChp"]; } else { $HalChp = ""; }
+if(isset($_GET["SoSerSun"])) { $SoSerSun = $_GET["SoSerSun"]; } else { $SoSerSun = ""; }
+if(isset($_GET["SliChee"])) { $SliChee = $_GET["SliChee"]; } else { $SliChee = ""; }
+if(isset($_GET["WarAppCri"])) { $WarAppCri = $_GET["WarAppCri"]; } else { $WarAppCri = ""; }
+if(isset($_GET["Coff"])) { $Coff = $_GET["Coff"]; } else { $Coff = ""; }
+if(isset($_GET["SoDr"])) { $SoDr = $_GET["SoDr"]; } else { $SoDr = ""; }
+if(isset($_GET["FlaLem"])) { $FlaLem = $_GET["FlaLem"]; } else { $FlaLem = ""; }
+//check to see if variable has a value stored in it and add value to $cost array for each possible checked value
+if($FP == "FP"){
+    $cost[] = 4;
+}
+if ($BBW == "BBW") {
+    $cost[] = 4;
+}
+if ($OnR== "OnR") {
+    $cost[] = 4;
+}
+if ($SimBur == "SimBur") {
+    $cost[] = 4;
+}
+if ($SimChk == "SimChk") {
+    $cost[] = 4;
+}
+if ($HalChp == "HalChp") {
+    $cost[] = 4;
+}
+if ($SoSerSun == "SoSerSun") {
+    $cost[] = 4;
+}
+if ($SliChee == "SliChee") {
+    $cost[] = 4;
+}
+if ($WarAppCri == "WarAppCri") {
+    $cost[] = 4;
+}
+if ($Coff == "Coff") {
+    $cost[] = 4;
+}
+if ($SoDr == "SoDr") {
+    $cost[] = 4;
+}
+if($FlaLem == "FlaLem") {
+    $cost[] = 4;
+}
+
+
+//print the values collected to the screen with a total at the bottom
+ print "
+<style>
+body { margin: 4%; }
+</style>
+
+<body>
+<h1>Kitchen Order For: $name </h1>
+<p><b>tel:</b> $tel<br /><br />
+";
+print array_sum($cost);
+//used for testing to see if values are being stored in array
+print_r($cost);
+
+
+
+?>

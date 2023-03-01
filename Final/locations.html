@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Locations</title>
+<!--
+
+CID Name Assignment (change the title tag above too!)
+
+What objectives are you demonstrating?
+
+-->
+
+<style>
+#mainDiv {
+  display: auto;
+  margin: auto;
+  width: 1020px;
+  height: 720px;
+  background: grey;
+}
+
+#dropDown {
+  margin: auto;
+  display: auto;
+  text-align: center;
+}
+
+#locations {
+  display: flex;
+  
+}
+
+.loc:first-child {
+  margin-left: 77px;
+}
+
+.loc {
+  width: 300px;
+  height: 400px;
+  margin: 3px;
+  background: blue;
+  color: white;
+  text-indent: 20px;
+  box-shadow: 0px 0px 10px black;
+}
+
+iframe {
+  width: 280px;
+  height: 250px;
+  margin: 10px;
+}
+
+</style>
+
+<script defer>
+/*
+ * This is the JSON payload saved to a variable. It consists of a state key w/ an 
+ * array value of 3 states, and each state has arrays for city, street, zip, and 
+ * an html src for Google Maps. The locations chosen are just random restaurants 
+ * that looked interesting and maybe I'll try one day. To keep advertising out of 
+ * this I just embedded to the address without the name of the business.
+*/
+var address = {
+	"states": [{
+			"state": "Washington",
+			"city": ["Gig Harbor", "Seattle", "Tacoma"],
+			"street": ["4701 Point Fosdick Dr.", "1835 Queen Anne Ave N", "1715 Dock St."],
+			"zip": ["Gig Harbor, WA 98335", "Seattle, WA 98109", "Tacoma, WA 98402"],
+			"src": ["https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2705.718361237593!2d-122.57840566265891!3d47.30030314298699!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5491accc9f76f9a9%3A0xcc984a17445627b!2s4701%20Point%20Fosdick%20Dr%2C%20Gig%20Harbor%2C%20WA%2098335!5e0!3m2!1sen!2sus!4v1623118131834!5m2!1sen!2sus", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.5050531821657!2d-122.35891423312145!3d47.63575158959332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490151323f24683%3A0x4784d1edf1169778!2s1835%20Queen%20Anne%20Ave%20N%2C%20Seattle%2C%20WA%2098109!5e0!3m2!1sen!2sus!4v1623124153866!5m2!1sen!2sus", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.466471021406!2d-122.43504489904133!3d47.24658109263287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905576387f2465%3A0xbcd4f30b033db639!2s1715%20Dock%20St%2C%20Tacoma%2C%20WA%2098402!5e0!3m2!1sen!2sus!4v1623124259423!5m2!1sen!2sus"]
+		},
+		{
+			"state": "Oregon",
+			"city": ["Portland", "Eugene", "Bend"],
+			"street": ["618 SW Nebraska St", "1404 Orchard St", "211 NE Revere Ave"],
+			"zip": ["Portland, OR 97239", "Eugene, OR 97403", "Bend, OR 97701"],
+			"src": ["https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.641203409407!2d-122.67490088421823!3d45.47703117910109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950afb4f642633%3A0xd3b79bc1f9c6f928!2s618%20SW%20Nebraska%20St%2C%20Portland%2C%20OR%2097239!5e0!3m2!1sen!2sus!4v1623124366599!5m2!1sen!2sus", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.8952846054913!2d-123.06510337114399!3d44.04421849069454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54c11e2f7649b195%3A0x6575f5f6ce5cdb63!2s1404%20Orchard%20St%2C%20Eugene%2C%20OR%2097403!5e0!3m2!1sen!2sus!4v1623124543048!5m2!1sen!2sus", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2866.791760157105!2d-121.30582328425939!3d44.0670084791093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54b8c8a3c8a4fb5f%3A0x961e259ec5aa5aae!2s211%20NE%20Revere%20Ave%2C%20Bend%2C%20OR%2097701!5e0!3m2!1sen!2sus!4v1623124605641!5m2!1sen!2sus"]
+		},
+		{
+			"state": "California",
+			"city": ["San Fransisco", "Anaheim", "San Diego"],
+			"street": ["1906 Van Ness Ave", "600 W Lincoln Ave", "550 W Date St"],
+			"zip": ["San Fransisco, CA 94109", "Anaheim, CA 92805", "San Diego, CA 92101"],
+			"src": ["https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1576.4283038856245!2d-122.42359274177858!3d37.79340009493905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580ea426a459f%3A0xfe73db1b3a876f6c!2s1906%20Van%20Ness%20Ave%2C%20San%20Francisco%2C%20CA%2094109!5e0!3m2!1sen!2sus!4v1623124760088!5m2!1sen!2sus", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.180285797606!2d-117.92320487694833!3d33.83346098175115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd626c30d2959%3A0xc19f12a8cb7bd034!2s600%20W%20Lincoln%20Ave%2C%20Anaheim%2C%20CA%2092805!5e0!3m2!1sen!2sus!4v1623124904615!5m2!1sen!2sus", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.6044615393284!2d-117.17036498455089!3d32.7231366809884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d954adfc0fb18d%3A0x2d32d86435165904!2s550%20W%20Date%20St%2C%20San%20Diego%2C%20CA%2092101!5e0!3m2!1sen!2sus!4v1623124999525!5m2!1sen!2sus"]
+		}
+	]
+};
+
+/*
+ * This function triggers when the form changes (ie the user selects a new entry)
+*/
+function displayLocations() {
+  
+  // Variables for use in the function
+  var locDivs = ["loc1","loc2","loc3"];
+  var state = this.states.value;
+  
+  /*
+   * This clears everything inside the location <div>'s tags each time prior
+   * to writing to the document.
+   */
+  for(i in locDivs) {
+    document.getElementById(locDivs[i]).innerHTML = "";
+  }
+  
+  
+  /*
+   * This for loop, loops through the JSON data. If the state selected on the drop down
+   * equals the state in the JSON it will then iterate through each city and write the
+   * information to the document using getElementById and innerHTML.
+   */
+  for(i in address.states) {
+    for(j in locDivs) {
+      if(address.states[i].state === state) {
+        document.getElementById(locDivs[j]).innerHTML += 
+          "<h3>" + address.states[i].city[j] + "</h3>" +
+          "<p>" + address.states[i].street[j] + "</p>" +
+          "<p>" + address.states[i].zip[j] + "</p>" +
+          "<iframe style='border:0' loading='lazy' src='" + address.states[i].src[j] + "'></iframe>";
+      }
+    }
+  }
+}
+
+</script>
+
+</head>
+<body>
+<div id="mainDiv">
+  <div id="dropDown">
+    <h1> LOCATIONS</h1>
+    <form onchange="displayLocations(this)">
+      <select id="states" name="states">
+        <option value="choose">Choose a State</option>
+        <option value="Washington">Washington</option>
+        <option value="Oregon">Oregon</option>
+        <option value="California">California</option>
+      </select>
+  </div>
+  <div id="locations">
+    <div class="loc" id="loc1"></div>
+    <div class="loc" id="loc2"></div>
+    <div class="loc" id="loc3"></div>
+  </div>
+</div>
+
+
+</body>
+</html>

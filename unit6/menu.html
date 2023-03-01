@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>S20 U06B fadeMenu.htm</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--
+
+S20 Blake Lacroix U06B fadeMenu.htm (change the title tag above too!)
+
+--.ready that loads all functions after the page has loaded
+--.hide that hides all content except Relative URLs
+--.click that will execute specfic functions relating to each menu item
+--.fadeToggle that will fade in the corresponding <span> elements 
+--.slideToggle that will slide down corresponding <ui> and beginning <li> tags
+--unique id's and classes used as selectors to for corresponding jQuery events
+
+-->
+
+<style>
+    h1{
+        color: #34676E;
+        border:outset;
+        text-align: center;
+        background-color:#ffffff;
+    }
+    
+    b{
+        color: #34676E;
+    }
+    a{
+        margin:2%;
+    }
+    span{
+        color:#6d3a34;
+    }
+    body{
+        background-color: bisque;
+        
+    }
+    footer{
+        margin: 30px;
+        color: #34676E;
+        text-align: center;
+        border:outset;
+        background-color: #ffffff;
+        
+    }
+    ul{
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.8;
+    }
+
+
+</style>
+
+<script>
+$(document).ready(function() {
+    //Hides everything except the Relative URLs
+    $("#appsFP,#appsBW,#appsOR,#entreesSB,#entreesSCB,#entreesHC,#dessertsSSS,#dessertsSC,#dessertsWAC,#beverageC,#beverageSD,#beveragesFL,#slideA,#slideE,#slideD,#slideB").hide();
+    //Show ul with slide then fade in the spans 4 seconds after clicked
+    $("#fadeApps,.slideApps").click(function() {
+		$("#appsFP,#appsBW,#appsOR").fadeToggle(4000);
+        $("#slideA").slideToggle("slow");
+	});
+    $("#fadeEntrees,.slideEntrees").click(function() {
+		$("#entreesSB,#entreesSCB,#entreesHC").fadeToggle(4000);
+        $("#slideE").slideToggle("slow");
+	});
+    $("#fadeDesserts,.slideDesserts").click(function() {
+		$("#dessertsSSS,#dessertsSC,#dessertsWAC").fadeToggle(4000);
+        $("#slideD").slideToggle("slow");
+	});
+    $("#fadeBeverages,.slideBeverages").click(function() {
+		$("#beverageC,#beverageSD,#beveragesFL").fadeToggle(4000);
+        $("#slideB").slideToggle("slow");
+	});
+});
+</script>
+
+</head>
+<body>
+    <h1>Blake's Resturant and Eatery</h1>
+
+<a id="fadeApps" class="slideApps"  href="#">Apps</a>
+    <p >
+        <ul id="slideA">
+            <li><b>Fried pickles</b> -<span id="appsFP">Golden-Fried dill slices served with our special sauce</span></li>
+        </br>
+            <li><b>Boneless Buffalo Wings</b> -<span id="appsBW">All-white meat boneless wings with your choice of sauce: Buffalo with bleu cheese, BBQ, or teriyaki</span> </li>
+        </br>
+            <li><b>Onion Rings</b> - <span id="appsOR">crispy onion rings served with Spicy Mayo and ranch</span></li>
+        </ul>
+         
+    </p>
+<a id="fadeEntrees" class="slideEntrees" href="#">Entrees</a>
+    <p>
+        <ul id="slideE">
+            <li><b>Simple Burger</b> -<span id="entreesSB">Beef or a custom-blended, ancient-grain-and-quinoa veggie patty, pickles, red onions, lettuce and tomatoes.</span></li>
+        </br>
+            <li><b>Simple Chicken Burger</b> -<span id="entreesSCB">Juicy chicken breast with pickles, lettuce, tomatoes and red onions on the side.</span> </li>
+        </br>
+            <li><b>Halibut & Chips</b> - <span id="entreesHC">Hand-battered, golden-fried halibut fillets with Steak Fries and Dill’d & Pickl’d Tarter Sauce.</span></li>
+        </ul>
+         
+    </p>
+<a id="fadeDesserts" class=".slideDesserts"  href="#">Desserts</a>
+    <p>
+        <ul id="slideD">
+            <li><b>Soft Serve Sundae</b> -<span id="dessertsSSS">Two layers of chocolate syrup, soft serve, whipped cream, rainbow sprinkles and a cherry on top.</span></li>
+        </br>
+            <li><b>Slice of Cheescake</b> -<span id="dessertsSC">Creamy Cheesecake with a Graham Cracker Crust and Sour Cream Topping.</span> </li>
+        </br>
+            <li><b>Warm Apple Crisp</b> - <span id="dessertsWAC">Delicious Crispy Nutty Topping and Vanilla Ice Cream.</span></li>
+        </ul>
+         
+    </p>
+<a id="fadeBeverages" class=".slideBeverages"  href="#">Beverages</a>
+    <p>
+        <ul id="slideB">
+            <li><b>Coffee</b> -<span id="beverageC">Cup of hot rotating blend of coffee</span></li>
+        </br>
+            <li><b>Soft Drinks</b> -<span id="beverageSD">Coke, Diet Coke, Coke Zero, Barq's Root Beer, Sprite, and Dr Pepper. As always, refills are complimentary.</span> </li>
+        </br>
+            <li><b>Flavored Lemonades</b> - <span id="beveragesFL">Strawberry, Raspberry or Strawberry.</span></li>
+        </ul>
+         
+    </p>
+    <footer>
+        <p>
+            <a href="insertEmail@gmail.com">Contact Blake</a><span>Tel. 253-555-5555</span>
+        </p>
+    </footer>
+</body>
+
+</html>

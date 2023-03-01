@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S13 Group Project Homepage</title>
+<!--
+
+CID Name Assignment (change the title tag above too!)
+
+What objectives are you demonstrating?
+
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style>
+body {
+	background-color: white;
+}
+h1{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	color: #df5353;
+	text-shadow: 1px 1px  rgb(44, 44, 44);
+	width: fit-content;
+	height: fit-content;
+}
+#test{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	left: 14%;
+}
+#imageFrame{
+	box-shadow: 1px 1px 5px gray;
+	transform: scale(1, 1);
+}
+/* radio buttons css */
+.radios{
+	position: relative;
+	left: 68%;
+}
+input[type='radio']:after {
+    background-color: #d6d6d6;
+    content: '';
+    display: inline-block;
+	position: relative;
+	width: 14px;
+    height: 14px;
+    top: -2px;
+    left: -1px;
+    border: 1px inset white;
+}
+input[type='radio']:checked:after {
+    background-color: #df5353;
+    content: '';
+    display: inline-block;
+	position: relative;
+	width: 15px;
+    height: 15px;
+    top: -2px;
+    left: -1px;
+    border: 1px outset white;
+}
+/* image text */
+#imagetextcontainer{
+  	position: absolute;
+  	bottom: -30px;
+}
+#textbackground{
+	border-top-right-radius: 30px;
+	min-width: 100%;
+	min-height: 100%;
+	background-color: black;
+	position: absolute;
+	opacity: 50%;
+}
+#imagetext{
+	position: relative;
+  	color: white;
+	padding-left: 20px;
+}
+/* order text box */
+#order{
+	position: relative;
+	top: 500px;
+	background-color: black;
+	color: white;
+	width: fit-content;
+	border-radius: 20px;
+	padding: 2px;
+	box-shadow: 1px 1px 5px gray;
+}
+a{
+	color: rgb(228, 225, 225);
+	text-decoration: none;
+}
+a:visited{
+	color: #df5353;
+}
+</style>
+<script>
+$(document).ready(function(){
+	//Text and Image links for the food items
+	var foods = {
+		"boneless" : {
+			"link" : "https://cdn.discordapp.com/attachments/760733919581700126/852015282247172106/bonelessbuffalowings.jpg",
+			"text" : "Boneless Buffalo Wings....$5.00 -All-white meat boneless wings with your choice of sauce: Blue Cheese, Barbeque, or Teriyaki",
+		},
+		"fried" : {
+			"link" : "https://cdn.discordapp.com/attachments/760733919581700126/852015265104265226/friedpickles.jpg",
+			"text" : "Fried Pickles....$4.00 -Golden-Fried dill slices served with a side of our special sauce",
+		},
+		"onion" : {
+			"link" : "https://cdn.discordapp.com/attachments/760733919581700126/852059818344579082/onionrings.jpg",
+			"text" : "Onion Rings....$4.50 -Crispy onion rings served with spicy mayo and ranch on the side",
+		},
+	};
+	/* on each click of the radio buttons the image and text will fade out then
+	   change to the relevant food option and then fade back in */
+	$("#food1").click(function(){
+		$("#imagetextcontainer, #imageFrame").fadeOut(500, function(){
+			$("#imageFrame").attr("src", foods.boneless.link);
+			$("#box").html(foods.boneless.text);
+			$("#imageFrame").fadeIn(1000);
+			$("#imagetextcontainer").fadeIn(1000);
+		});
+	})
+	$("#food2").click(function(){
+		$("#imagetextcontainer, #imageFrame").fadeOut(500, function(){
+			$("#imageFrame").attr("src", foods.fried.link);
+			$("#box").html(foods.fried.text);
+			$("#imageFrame").fadeIn(1000);
+			$("#imagetextcontainer").fadeIn(1000);
+		});
+	})
+	$("#food3").click(function(){
+		$("#imagetextcontainer, #imageFrame").fadeOut(500, function(){
+			$("#imageFrame").attr("src", foods.onion.link);
+			$("#box").html(foods.onion.text);
+			$("#imageFrame").fadeIn(1000);
+			$("#imagetextcontainer").fadeIn(1000);
+		});
+	})
+});
+</script>
+</head>
+<body>
+	<h1>Home</h1>
+	<div id="test">
+		<img id="imageFrame" src="https://cdn.discordapp.com/attachments/760733919581700126/852015282247172106/bonelessbuffalowings.jpg" style=" display:block; position:absolute; top:0; left: 0;">
+		<form id="selectors">
+			<input type="radio" name="imageRadio" class="radios" id="food1" checked>
+			<input type="radio" name="imageRadio" class="radios" id="food2">
+			<input type="radio" name="imageRadio" class="radios" id="food3">
+		</form>
+		<div id="imagetextcontainer">
+			<div id="textbackground"></div>
+			<div id="imagetext">
+				<p id='box' >Boneless Buffalo Wings....$5.00
+				-All-white meat boneless wings with your choice of sauce: Blue Cheese, Barbeque, or Teriyaki</p>
+			</div>
+		</div>
+	<p id="order">Order these foods and more at our <a href="menu.html">menu</a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<script>
+
+function xcolor(chkbox) { //Name the form object "chkbox"
+	
+  var msg = "";
+	
+  for(var i = 0; i < chkbox.rgb.length; i++) { //.rgb.lenght gets size of array
+  	
+    if(chkbox.rgb[i].checked) { //Test each radio button to see if ".checked"
+      msg = chkbox.rgb[i].value + " checked! ";
+      break; //Terminate loop early when checked!
+    }
+    
+  }
+  
+  document.getElementById("msg").innerHTML = msg; //Send message to ID
+
+}
+
+</script>
+
+<form>
+<input type="radio" name="rgb" value="Red" checked />Red<br />
+<input type="radio" name="rgb" value="Blue" />Blue<br />
+<input type="radio" name="rgb" value="Green" />Green<br />
+<input type="button" value="Submit" onClick="xcolor(this.form)" /> <!--Send form to function-->
+</form>
+<p id="msg"></p> <!--Get msg from function-->
